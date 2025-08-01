@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Developer Portfolio</title>
+    <title>ekrots Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -12,7 +12,7 @@
         }
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         .skill-pill {
             transition: all 0.2s ease;
@@ -30,489 +30,483 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: #3b82f6;
+            background-color: #f59e0b;
             transition: width 0.3s ease;
         }
         .nav-link:hover::after {
             width: 100%;
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+        .active-nav::after {
+            width: 100%;
         }
-        .contact-input {
+        #hamburger-menu {
             transition: all 0.3s ease;
         }
-        .contact-input:focus {
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        .rotate-180 {
+            transform: rotate(180deg);
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i class="fas fa-gamepad text-blue-600 text-2xl mr-2"></i>
-                        <span class="text-xl font-bold text-gray-900">RobloxDev</span>
-                    </div>
-                </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#home" class="nav-link text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Home</a>
-                    <a href="#projects" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Projects</a>
-                    <a href="#skills" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Skills</a>
-                    <a href="#contact" class="nav-link text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">Contact</a>
-                </div>
-                <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- Notice Banner -->
+    <div class="bg-amber-900/50 py-2 px-4 text-center border-b border-amber-700/50">
+        <p class="text-sm md:text-base"><i class="fas fa-exclamation-triangle mr-2"></i> Note: I specialize in game systems and logic, not graphic design or UI art.</p>
+    </div>
 
-        <!-- Mobile menu -->
-        <div class="hidden md:hidden" id="mobile-menu">
-            <div class="pt-2 pb-3 space-y-1">
-                <a href="#home" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
-                <a href="#projects" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Projects</a>
-                <a href="#skills" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Skills</a>
-                <a href="#contact" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm a <span class="text-yellow-300">Roblox Developer</span></h1>
-                    <p class="text-xl mb-6">I specialize in creating engaging game mechanics, intuitive UI systems, and optimized backend solutions for Roblox experiences.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition duration-300 flex items-center">
-                            <i class="fas fa-paper-plane mr-2"></i> Hire Me
-                        </a>
-                        <a href="#projects" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-lg font-semibold transition duration-300 flex items-center">
-                            <i class="fas fa-eye mr-2"></i> View Work
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 bg-blue-400 rounded-full overflow-hidden shadow-xl">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-75"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-cube text-white text-8xl opacity-50"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="bg-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">About My Work</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-code text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Roblox Scripting</h3>
-                    <p class="text-gray-600">Expert in Lua scripting for game mechanics, UI systems, and backend functionality including datastores and modules.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-paint-brush text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">UI Design</h3>
-                    <p class="text-gray-600">Creating ui animations using tweenservice.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-cube text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Game Systems</h3>
-                    <p class="text-gray-600">Designing and implementing complex game systems including progression, combat, economy, and customization.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="bg-gray-50 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Here are some of my best Roblox projects showcasing my range of skills and expertise.</p>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-700">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-amber-500 rounded-full"></div>
+                <h1 class="text-xl font-bold bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Roblox Scripter</h1>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-                        <i class="fas fa-shield-alt text-white text-6xl opacity-75"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Tower Defense Game</h3>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Backend</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">UI</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Animations</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Developed full backend system including shop UI, wave spawning logic, and tower animations with special abilities.</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-code-branch mr-1"></i>
-                            <span>Lua, Roblox Studio</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="h-48 bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center">
-                        <i class="fas fa-mouse-pointer text-white text-6xl opacity-75"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Clicking Simulator</h3>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Progression</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Economy</span>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Pets</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Created rebirth system, leaderstats, auto clickers, egg hatching mechanics, and pet collection/upgrade system.</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-code-branch mr-1"></i>
-                            <span>Lua, Datastores</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="h-48 bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center">
-                        <i class="fas fa-trophy text-white text-6xl opacity-75"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Battle Royale Game</h3>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Battlepass</span>
-                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Inventory</span>
-                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Admin</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Developed complete battle royale system including battlepass, emote wheel, inventory, tool system, admin commands, and custom UI animations.</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-code-branch mr-1"></i>
-                            <span>Lua, DataStore2</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center">
-                        <i class="fas fa-paw text-white text-6xl opacity-75"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Pet Simulator</h3>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Inventory</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Datastores</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">UI Design</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Built inventory system with datastores, UI design for pet management, and upgrade progression system.</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-code-branch mr-1"></i>
-                            <span>Lua, Modules</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center">
-                        <i class="fas fa-swords text-white text-6xl opacity-75"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Weapon Fighting Game</h3>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">3D Weapons</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Animations</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">UI Scaling</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Created 3D weapons with blend animations, combat effects, and responsive UI scaling for different devices.</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-code-branch mr-1"></i>
-                            <span>Lua, Blender</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center">
-                        <i class="fas fa-user-shield text-white text-6xl opacity-75"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Parkour to Admin</h3>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Admin</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Datastores</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Zones</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Created fully functional admin system with commands (kick, freeze, teleport), touch-to-claim admin zones, and datastore integration for permissions.</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-code-branch mr-1"></i>
-                            <span>Lua, ProfileService</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button id="hamburger-btn" class="md:hidden text-gray-300 hover:text-amber-400 focus:outline-none">
+                <i class="fas fa-bars text-2xl" id="hamburger-menu"></i>
+            </button>
             
-            <div class="text-center mt-12">
-                <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-300">
-                    <i class="fas fa-briefcase mr-2"></i> Interested in my work? Let's talk!
-                </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-300 hover:text-amber-400 py-2">About</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-amber-400 py-2">Skills</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-amber-400 py-2">Projects</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-amber-400 py-2">Contact</a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#about" class="nav-link text-gray-300 hover:text-amber-400 py-2">About</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-amber-400 py-2">Skills</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-amber-400 py-2">Projects</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-amber-400 py-2">Contact</a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Skills Section -->
-    <section id="skills" class="bg-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">My Skills</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Technologies and methodologies I'm proficient in.</p>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="py-12 md:py-20 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Game Systems Specialist</h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">Bringing Roblox games to life through robust scripting, optimized systems, and engaging mechanics</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#projects" class="px-6 py-3 bg-amber-600 hover:bg-amber-700 rounded-lg font-medium transition-colors">View Projects</a>
+                    <a href="#contact" class="px-6 py-3 border border-amber-600 text-amber-400 hover:bg-amber-900/30 rounded-lg font-medium transition-colors">Contact Me</a>
+                </div>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Core Skills -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-4 flex items-center">
-                        <i class="fas fa-laptop-code text-blue-600 mr-3"></i> Core Development
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Lua</span>
-                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Roblox API</span>
-                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">OOP Patterns</span>
-                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">ModuleScripts</span>
-                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">DataStore2</span>
-                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">ProfileService</span>
-                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">RemoteEvents</span>
-                        <span class="skill-pill bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">RemoteFunctions</span>
-                    </div>
-                </div>
-                
+        </section>
 
-                
-                <!-- Game Systems -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-4 flex items-center">
-                        <i class="fas fa-gamepad text-green-600 mr-3"></i> Game Systems
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Combat Systems</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Chat tag system</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">custom admin commands
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">server events
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">global events
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Shop
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">bundles
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">battlepass system</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">emotewheel system
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">inventory system
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Tool system
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">battleroyale system
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">admin system
-</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Economy</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Progression</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Inventory</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Shops</span>
-                        <span class="skill-pill bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Leaderboards</span>
-                    </div>
-                </div>
-                
-   
-                
-
-                
-                <!-- Optimization -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-4 flex items-center">
-                        <i class="fas fa-tachometer-alt text-teal-600 mr-3"></i> Optimization
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Code Structure</span>
-                        <span class="skill-pill bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Performance</span>
-                        <span class="skill-pill bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Memory Usage</span>
-                        <span class="skill-pill bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Networking</span>
-                        <span class="skill-pill bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Debouncing</span>
-                        <span class="skill-pill bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Efficient Loops</span>
+        <!-- About Section -->
+        <section id="about" class="py-12 md:py-20">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">About Me</h2>
+                <div class="bg-gray-800/50 rounded-xl p-6 md:p-8 border border-gray-700">
+                    <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                        <div class="w-32 h-32 bg-gray-700 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-secret text-5xl text-amber-500"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-4">Who I Am</h3>
+                            <p class="text-gray-300 mb-4">
+                                I'm a dedicated Roblox scripter with a passion for creating immersive gameplay experiences. My expertise lies in designing and implementing game systems that form the backbone of engaging Roblox games.
+                            </p>
+                            <p class="text-gray-300">
+                                I focus exclusively on the technical aspects of game development - the logic, mechanics, and systems that make games function smoothly and provide players with compelling experiences.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="bg-gray-50 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
-                <div class="mb-12 lg:mb-0">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-                    <p class="text-gray-600 mb-6">Interested in working together? Have a project in mind? Feel free to reach out!</p>
+        <!-- Skills Section -->
+        <section id="skills" class="py-12 md:py-20">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">My Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 text-amber-400">Core Expertise</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Lua (Roblox Scripting)</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Combat Systems</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Chat tag system</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">custom admin commands</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">server events</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">global events</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Shop</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">bundles</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">emotewheel system</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">inventory system</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Tool system</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">battleroyale system
+</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">admin system</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Economy</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Progression</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Inventory</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Leaderboards</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">shops</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">UI animations</span>
+                           
+                          
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Module & OOP Programming</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Client-Server Communication</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">DataStore Systems</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Animation Scripting</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">UI Logic Scripting</span>
+                            <span class="skill-pill bg-gray-700/80 hover:bg-gray-600 px-4 py-2 rounded-full text-sm font-medium">Performance Optimization</span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 text-amber-400">Technical Focus</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-code text-amber-500 mt-1 mr-3"></i>
+                                <span class="text-gray-300">Gameplay system architecture and implementation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-network-wired text-amber-500 mt-1 mr-3"></i>
+                                <span class="text-gray-300">Networked game mechanics with RemoteEvents/Functions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-database text-amber-500 mt-1 mr-3"></i>
+                                <span class="text-gray-300">Persistent data systems with DataStore</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-tachometer-alt text-amber-500 mt-1 mr-3"></i>
+                                <span class="text-gray-300">Performance optimization for smooth gameplay</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-cogs text-amber-500 mt-1 mr-3"></i>
+                                <span class="text-gray-300">Complex game mechanics and progression systems</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-12 md:py-20">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">My Projects</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="project-card bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-amber-400">GAG System</h3>
+                                <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">small</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs px-2 py-1 bg-green-900/50 text-green-400 rounded-full">Finished</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Grow a garden systems introduced as a project
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Systems: offline growing, global Shop, planting</span>
+                            </div>
+                            <a href="https://youtu.be/ozfmS-TEQn8" class="mt-4 flex items-center text-amber-400 hover:text-amber-300 text-sm">
+                                <i class="fab fa-youtube mr-2"></i> Watch Demo
+                            </a>
+                        </div>
+                    </div>
                     
-                    <div class="space-y-4">
-                        
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-purple-100 p-3 rounded-lg">
-                                <i class="fab fa-discord text-purple-600"></i>
+                    <!-- Project 2 -->
+                    <div class="project-card bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-amber-400">Harvesting Simulator</h3>
+                                <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">small</span>
                             </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-medium text-gray-900">Discord</h3>
-                                <p class="text-gray-600">ekrots_dev</p>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs px-2 py-1 bg-green-900/50 text-green-400 rounded-full">Finished</span>
                             </div>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Complete system with growth timers, resource generation, tool upgrades, and sell mechanics.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Systems: Economy, Progression</span>
+                            </div>
+                            <a href="https://youtu.be/pUNNcuKAOSU" class="mt-4 flex items-center text-amber-400 hover:text-amber-300 text-sm">
+                                <i class="fab fa-youtube mr-2"></i> Watch Demo
+                            </a>
                         </div>
-                        
-  
                     </div>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-6">My Specializations</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-purple-100 p-2 rounded-full">
-                                <i class="fas fa-gamepad text-purple-600"></i>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-amber-400">Mining Simulator</h3>
+                                <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">small</span>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="font-medium">Gameplay Systems</h4>
-                                <p class="text-sm text-gray-600">Custom tools, weapons, pets, inventory, quests, NPC AI</p>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs px-2 py-1 bg-green-900/50 text-green-400 rounded-full">Finished</span>
                             </div>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Layered mining system with tool upgrades, depth saving, and rare ore spawns.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Systems: Progression, Randomization</span>
+                            </div>
+                            <a href="https://youtu.be/NS4ARV_Hy7I" class="mt-4 flex items-center text-amber-400 hover:text-amber-300 text-sm">
+                                <i class="fab fa-youtube mr-2"></i> Watch Demo
+                            </a>
                         </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-blue-100 p-2 rounded-full">
-                                <i class="fas fa-desktop text-blue-600"></i>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-amber-400">Country Guesser</h3>
+                                <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">small</span>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="font-medium">UI Development</h4>
-                                <p class="text-sm text-gray-600">Tweened GUIs, dynamic menus, shops, crosshairs, HUDs</p>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs px-2 py-1 bg-green-900/50 text-green-400 rounded-full">Finished</span>
                             </div>
+                            <p class="text-gray-300 text-sm mb-4">
+                                a Game which knows the country you are From and The index.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Systems: UI Logic, country guesser</span>
+                            </div>
+                            <a href="https://youtu.be/NS4ARV_Hy7I" class="mt-4 flex items-center text-amber-400 hover:text-amber-300 text-sm">
+                                <i class="fab fa-youtube mr-2"></i> Watch Demo
+                            </a>
                         </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-green-100 p-2 rounded-full">
-                                <i class="fas fa-database text-green-600"></i>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                    <!-- Project 5 -->
+                    <div class="project-card bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-amber-400">Pet/Clicker Simulator</h3>
+                                <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Massive</span>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="font-medium">Database Systems</h4>
-                                <p class="text-sm text-gray-600">Leaderstats, DataStore2, ProfileService, admin systems</p>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs px-2 py-1 bg-green-900/50 text-green-400 rounded-full">Finished</span>
                             </div>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Scripted pet system with  currency farming, upgrades, and hatching animations.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Systems: Pets, Economy, Animation</span>
+                            </div>
+                            <a href="https://youtu.be/6ktOUNXsTfw" class="mt-4 flex items-center text-amber-400 hover:text-amber-300 text-sm">
+                                <i class="fab fa-youtube mr-2"></i> Watch Demo
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="project-card bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-amber-400">Battle Royale</h3>
+                                <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Massive</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs px-2 py-1 bg-blue-900/50 text-blue-400 rounded-full">Ongoing</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4">
+                               Developed complete battle royale system including battlepass, emote wheel, inventory, tool system, admin commands, and custom UI animations.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Systems: Combat, Inventory, Networking</span>
+                            </div>
+                            <a href="https://youtu.be/EU-knZWV1mE" class="mt-4 flex items-center text-amber-400 hover:text-amber-300 text-sm">
+                                <i class="fab fa-youtube mr-2"></i> Watch Demo
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 7 -->
+                    <div class="project-card bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-amber-400">Parkour to Admin</h3>
+                                <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">small</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs px-2 py-1 bg-green-900/50 text-green-400 rounded-full">Finished</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Parkour to the top of the tower to get admin powers
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Systems: Progression, Permissions</span>
+                            </div>
+                            <a href="https://youtu.be/JKKwh0NAIlQ" class="mt-4 flex items-center text-amber-400 hover:text-amber-300 text-sm">
+                                <i class="fab fa-youtube mr-2"></i> Watch Demo
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 8 -->
+                    <div class="project-card bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 hover:border-amber-500/50">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-semibold text-amber-400">Warrior Simulator</h3>
+                                <span class="text-xs px-2 py-1 bg-gray-700 rounded-full">Big</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-xs px-2 py-1 bg-green-900/50 text-green-400 rounded-full">Finished</span>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4">
+                                Full combat logic, leveling system,  and attack animations.
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs text-gray-400">Systems: Combat, Progression, Animation</span>
+                            </div>
+                            <a href="https://youtu.be/Ejbkd6h4Pss" class="mt-4 flex items-center text-amber-400 hover:text-amber-300 text-sm">
+                                <i class="fab fa-youtube mr-2"></i> Watch Demo
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="flex justify-center md:order-2 space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-fiverr"></i>
-                    </a>
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 md:py-20">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Get In Touch</h2>
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-700">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 text-amber-400">Contact Information</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-4">
+                                        <i class="fab fa-discord text-amber-500"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-400">Discord</p>
+                                        <p class="font-medium">ekrots_dev</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 text-amber-400">Availability</h3>
+                            <p class="text-gray-300 mb-4">
+                                I'm currently available for contract work and collaborations on interesting Roblox projects.
+                            </p>
+                            <p class="text-gray-300">
+                                If you need a skilled scripter for your game systems, mechanics, or backend functionality, feel free to reach out!
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-8 md:mt-0 md:order-1">
-                    <p class="text-center text-base text-gray-400">
-                        &copy; 2023 Roblox Developer Portfolio. All rights reserved.
-                    </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-6 h-6 bg-amber-500 rounded-full"></div>
+                    <span class="font-medium">Roblox Scripter</span>
                 </div>
+                <div class="flex space-x-6">
+                    <a href="#about" class="text-gray-400 hover:text-amber-400 transition-colors">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-amber-400 transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-400 hover:text-amber-400 transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-amber-400 transition-colors">Contact</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+                <p>© 2023 Roblox Developer Portfolio. All rights reserved.</p>
+                <p class="mt-2">Specializing in game systems and mechanics - not graphic design or UI art.</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-menu');
+        
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('rotate-180');
         });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                // Close mobile menu if open
-                document.getElementById('mobile-menu').classList.add('hidden');
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        
+        // Close mobile menu when clicking a link
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.classList.remove('rotate-180');
             });
         });
-
-        // Form submission
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
+        
+        // Highlight active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
                 
-                // Get form values
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value;
-                
-                // Simple validation
-                if (!name || !email || !subject || !message) {
-                    alert('Please fill in all fields');
-                    return;
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
                 }
-                
-                // In a real implementation, you would send this data to a server
-                console.log('Form submitted:', { name, email, subject, message });
-                
-                // Show success message
-                alert('Thank you for your message! I will get back to you soon.');
-                
-                // Reset form
-                form.reset();
             });
-        }
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+
+
+
+        
     </script>
 </body>
 </html>
